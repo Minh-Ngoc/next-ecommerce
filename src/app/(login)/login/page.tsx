@@ -60,7 +60,7 @@ export default function Login() {
         }
         return (
             <section>
-                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <div className="select-none flex flex-col bg-black/50 items-center justify-center px-1/4 py-8 mx-auto md:h-screen lg:py-0">
                     <div className="flex items-center mb-6 text-3xl font-semibold text-white">
                         Login
                     </div>
@@ -101,18 +101,18 @@ export default function Login() {
                             />
                             <div className="flex items-center justify-between">
                                 <Checkbox defaultSelected radius="md">
-                                    <span className='text-white'>Remember me</span>
+                                    <span className='text-white text-xl'>Remember me</span>
                                 </Checkbox>
-                                <Link isBlock href="#" color="danger">
+                                <Link isBlock href="#" color="danger" size='lg'>
                                     Forgot password?
                                 </Link>
                             </div>
                             <Button type='submit' size='lg' color="default" variant="ghost" fullWidth className='text-white text-xl font-normal hover:text-danger-500'>
                                 Login
                             </Button>
-                            <p className="text-normal font-light text-white dark:text-gray-400">
+                            <p className="text-normal text-xl font-light text-white dark:text-gray-400">
                                 Don’t have an account yet? 
-                                <Link isBlock href="#" color="primary">
+                                <Link isBlock href="#" color="warning" size='lg'>
                                     Sign up?
                                 </Link>
                             </p>
