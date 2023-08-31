@@ -17,8 +17,8 @@ export default function Header() {
                         title={
                             <div className="flex items-center space-x-2">
                                 { tab.icon }
-                                { tab.href ? <Link href={tab.href} className="text-2xl text-white uppercase font-medium"> {tab.title} </Link>
-                                           : <span className="text-2xl text-white uppercase font-medium"> {tab.title} </span>
+                                { tab.href ? <Link href={tab.href} className="text-xl text-white uppercase font-medium"> {tab.title} </Link>
+                                           : <span className="text-xl text-white uppercase font-medium"> {tab.title} </span>
                                 }
                             </div>
                         }

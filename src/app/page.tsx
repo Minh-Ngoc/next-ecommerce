@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import ProductCard from '@/components/ProductCard';
 import { Product } from "@/types";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   const product: Product = {
@@ -32,6 +33,7 @@ export default function Home() {
         <ProductCard product={product} />
         <ProductCard product={product} />
       </div> 
+        <Carousel />
     </main>
   )
 }

@@ -89,7 +89,7 @@ module.exports = {
             },
           },
           colors: {
-            background: "#000000", // or DEFAULT
+            background: "bg-[radial-gradient(145.05%_100%_at_50%_0%,#1D2B41_0%,#020509_57.38%,#0F1A29_88.16%)]", // or DEFAULT
             foreground: "#ECEDEE", // or 50 to 900 DEFAULT
             primary: {
               //... 50 to 900

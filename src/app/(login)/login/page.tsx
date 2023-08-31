@@ -58,6 +58,7 @@ export default function Login() {
             label: 'text-xl font-medium',
             input: ['text-xl font-medium', 'placeholder:text-normal']
         }
+        
         return (
             <section>
                 <div className="select-none flex flex-col bg-black/50 items-center justify-center px-1/4 py-8 mx-auto md:h-screen lg:py-0">
