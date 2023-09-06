@@ -18,24 +18,18 @@ export default function ProductCard(props: any) {
         </div>
     );
     return (
-        <Tooltip
-            placement="bottom"
-            content={ProdHover}
-            offset={-180}
-            classNames={{
-                base: "bg-transparent px-0 py-0",
-            }}
-            shadow="sm"
-        >
-            <Card className="w-max" isPressable isFooterBlurred allowTextSelectionOnPress>
-                <CardBody className="py-3 px-2 relative">
+        <div className="py-3 px-1 relative bg-white shadow-xl rounded-s-md group hover:shadow-lg transition duration-200">
+            <Card shadow="none" isPressable isFooterBlurred allowTextSelectionOnPress onPress={() => console.log("item pressed")}>
+                <CardBody>
                     {   !product ? <Loading /> 
                         : <Image
                             shadow="sm"
-                            loading="lazy"
-                            radius="lg"
+                            loading="eager"
+                            radius="none"
+                            isZoomed
+                            isBlurred
                             alt={product.name}
-                            className="w-full object-contain h-[303px]"
+                            className="w-full object-cover h-[303px]"
                             src={product.images[0]}
                         />
                     } 
@@ -48,7 +42,15 @@ export default function ProductCard(props: any) {
                     </div>
                 </CardBody>
             </Card>
-        </Tooltip>
+            <div className="flex justify-center gap-4 flex-wrap w-full py-1 group-hover:visible invisible transition duration-200">
+                <Button color="primary" radius="sm" className="uppercase flex-1 max-w-[40%]">
+                    <ShoppingCart />
+                </Button>
+                <Button color="danger" radius="sm" className="uppercase flex-1 max-w-[40%]">
+                    <HeartFilledIcon />
+                </Button>
+            </div>
+        </div>
   );
 }
 
