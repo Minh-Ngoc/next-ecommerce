@@ -18,7 +18,7 @@ export default function ProductCard(props: any) {
         </div>
     );
     return (
-        <div className="py-3 px-1 relative bg-white shadow-xl rounded-s-md group hover:shadow-lg transition duration-200">
+        <div className="py-3 px-1 relative bg-white shadow-xl rounded-s-md group/prod-hover">
             <Card shadow="none" isPressable isFooterBlurred allowTextSelectionOnPress onPress={() => console.log("item pressed")}>
                 <CardBody>
                     {   !product ? <Loading /> 
@@ -42,9 +42,9 @@ export default function ProductCard(props: any) {
                     </div>
                 </CardBody>
             </Card>
-            <div className="flex justify-center gap-4 flex-wrap w-full py-1 group-hover:visible invisible transition duration-200">
-                <Button color="primary" radius="sm" className="uppercase flex-1 max-w-[40%]">
-                    <ShoppingCart />
+            <div className="flex justify-center gap-4 flex-wrap w-full min-w-[303px] py-1 group-hover/item:visible">
+                <Button radius="sm" className="bg-slate-700 text-white uppercase flex-1 max-w-[40%]">
+                    Add to cart
                 </Button>
                 <Button color="danger" radius="sm" className="uppercase flex-1 max-w-[40%]">
                     <HeartFilledIcon />
