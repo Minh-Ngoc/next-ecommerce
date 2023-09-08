@@ -1,12 +1,21 @@
-export interface Product {
-    id: number | string,
-    name: string,
+interface Stock {
+    _id?: string | number,
+    quantity?: number,
     price: number,
-    quantity: number,
-    images: string[] | string,
-    category: string,
-    brand: string,
-    size: string[] | string,
-    color: string[] | string,
-    HTMLDesc?: string
+    colorID?: string | number,
+    sizeID?: string | number,
+}
+
+interface UrlImage {
+    _id?: string | number,
+    urlImage: string | null
+}
+export interface Product {
+    _id?: string | number,
+    productName: string,
+    brand?: string,
+    description?: any,
+    categoryID?: string | number,
+    productImages: UrlImage | UrlImage[],
+    stock?: Stock | Stock[] ,
 }
