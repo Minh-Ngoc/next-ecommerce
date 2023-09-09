@@ -7,6 +7,7 @@ import { setUserInfo } from '@/redux/slices';
 import { Button, Checkbox, Input, Link } from "@nextui-org/react";
 import { EyeSlashFilledIcon } from '@/components/Icons';
 import { EyeFilledIcon } from '@/components/Icons/EyeFilledIcon';
+import Logo from '@/components/Logo';
 
 export const metadata: Metadata = {
     title: 'Login',
@@ -56,13 +57,14 @@ export default function Login() {
     } else {
         const labelStyle: any = {
             label: 'text-xl font-medium',
-            input: ['text-xl font-medium', 'placeholder:text-normal']
+            input: ['text-xl font-medium', 'placeholder:text-normal'],
+            errorMessage: 'text-lg text-yellow-500'
         }
         
         return (
             <section>
-                <div className="select-none flex flex-col bg-black/50 items-center justify-center px-1/4 py-8 mx-auto md:h-screen lg:py-0">
-                    <div className="flex items-center mb-6 text-3xl font-semibold text-white">
+                <div className="w-max select-none flex flex-col bg-black/50 items-center justify-center mb-10 px-12 py-12 mx-auto md:h-max border-solid border-2 border-indigo-600">
+                    <div className="flex items-center mb-6 text-3xl font-semibold text-white uppercase tracking-widest">
                         Login
                     </div>
                     <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -81,7 +83,7 @@ export default function Login() {
                             <Input
                                 value={form.password}
                                 type={isVisible ? "text" : "password"}
-                                label="Email"
+                                label="Password"
                                 classNames={labelStyle}
                                 size='lg'
                                 variant="bordered"

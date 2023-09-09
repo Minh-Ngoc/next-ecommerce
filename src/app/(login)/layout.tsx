@@ -15,10 +15,8 @@ export default function LoginLayout({ children }: { children: React.ReactNode })
   }
 
   return (
-    <div className={`w-full object-scale-down h-screen`} style={bgStyle}>
-        <div className='text-white'>
-          {children}
-        </div>
+    <div className={`w-full object-scale-down h-screen flex justify-center items-center text-white`} style={bgStyle}>
+      {children}
     </div>
   )
 }

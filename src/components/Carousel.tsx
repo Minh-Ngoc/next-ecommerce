@@ -9,12 +9,8 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { Image } from '@nextui-org/react';
-import bgImage2 from '@/assets/imgs/bg-login-2.jpg';
-import bgImage1 from '@/assets/imgs/bg-login-1.jpg';
-import bgImage from '@/assets/imgs/bg-login.jpg';
 
-export default function Carousel() { 
+export default function Carousel({ items }: any) { 
 
   return (
     <div className='relative h-full m-0 p-0 max-w-full'>
@@ -29,18 +25,17 @@ export default function Carousel() {
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination, Navigation]} 
-        className="mySwiper w-4/5 h-full"
+        modules={[
+          // Autoplay,
+          Pagination, 
+          Navigation]} 
+        className="mySwiper w-full h-full"
       >
-        <SwiperSlide className='!flex justify-center items-center'>
-          <Image loading="lazy" className='w-full flex-1 h-full max-h-[600px] object-scale' removeWrapper src={bgImage2.src} />
-        </SwiperSlide>
-        <SwiperSlide className='!flex justify-center items-center'>
-          <Image loading="lazy" className='w-full flex-1 h-full max-h-[600px] object-scale' removeWrapper src={bgImage1.src} />
-        </SwiperSlide>
-        <SwiperSlide className='!flex justify-center items-center'>
-          <Image loading="lazy" className='w-full flex-1 h-full max-h-[600px] object-scale' removeWrapper src={bgImage.src} />
-        </SwiperSlide>
+        {items.map((item: any, index: number) => (
+          <SwiperSlide key={index} className='!flex justify-center items-center'>
+            {item}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
