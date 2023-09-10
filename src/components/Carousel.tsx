@@ -26,13 +26,13 @@ export default function Carousel({ items }: any) {
           clickable: true,
         }}
         modules={[
-          // Autoplay,
+          Autoplay,
           Pagination, 
           Navigation]} 
         className="mySwiper w-full h-full"
       >
         {items.map((item: any, index: number) => (
-          <SwiperSlide key={index} className='!flex justify-center items-center'>
+          <SwiperSlide key={index} className='!flex justify-center max-h-[700px] items-center'>
             {item}
           </SwiperSlide>
         ))}

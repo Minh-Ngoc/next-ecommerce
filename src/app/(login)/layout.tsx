@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import bgImage from '@/assets/imgs/bg-login-2.jpg';
 
 export const metadata: Metadata = {

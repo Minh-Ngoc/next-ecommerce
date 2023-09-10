@@ -20,8 +20,9 @@ export default function Profile() {
     const router = useRouter();
 
     return (
-        <Dropdown showArrow
+        <Dropdown 
             radius="lg"
+            type="listbox"
             classNames={{
                 base: "px-3 py-2 border-small border-divider bg-background",
                 arrow: "bg-default-200",
