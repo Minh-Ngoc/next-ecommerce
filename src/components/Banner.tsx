@@ -44,18 +44,18 @@ export default function Banner() {
               </Button>
             </div>
           </div>
-          <div className="flex relative">
+          <div className="flex relative items-center">
             <Image
               src={model1.src}
               alt="Follow us on Twitter"
               loading="eager"
-              className="w-full h-auto"
+              className="w-auto h-auto max-h-[600px]"
             />
             <Image
               src={model2.src}
               alt="Follow us on Twitter"
               loading="eager"
-              className="w-full h-auto transform translate-x-1/10 translate-y-1/16"
+              className="w-auto h-auto max-h-[650px] transform translate-x-1/10 translate-y-1/16"
             />
           </div>
         </div>

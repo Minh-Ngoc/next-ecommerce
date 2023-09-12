@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import ProductList from "@/components/ProductList";
 import Carousel from "@/components/Carousel";
-import { Button, Image } from "@nextui-org/react";
+import { Button, Image, Tabs, Tab, Chip, Link } from "@nextui-org/react";
 import bannerNike from "@/assets/imgs/banner/banner-nike.png";
 import bannerAdidas from "@/assets/imgs/banner/banner-adidas.avif";
 import Banner from "@/components/Banner";
@@ -64,10 +64,23 @@ export default function Home() {
     desc?: string;
     titleBtn?: string;
   }) => (
-    <div className={`${className ? ' ' + className : ''}flex-1 flex items-center justify-center z-20${title == "Up to <br /> 40% off" ? " absolute top-1/2 left-[10%]" : ""}`}>
+    <div
+      className={`${
+        className ? " " + className : ""
+      }flex-1 flex items-center justify-center z-20${
+        title == "Up to <br /> 40% off" ? " absolute top-1/2 left-[10%]" : ""
+      }`}
+    >
       <div className="flex flex-col">
-        <h1 dangerouslySetInnerHTML={{ __html: title }} className={`${title == "Up to <br /> 40% off" ? "text-7xl" : "text-4xl"} font-extrabold line-clamp-2 uppercase`} />
-        <p className="font-bold text-xl"> { desc } </p>
+        <h1
+          dangerouslySetInnerHTML={{ __html: title }}
+          className={`${
+            title == "Up to <br /> 40% off"
+              ? "text-7xl leading-tight"
+              : "text-4xl leading-[50px]"
+          } font-extrabold line-clamp-2 uppercase`}
+        />
+        <p className="font-bold text-xl"> {desc} </p>
         <div className="mt-10">
           <Button
             size="lg"
@@ -76,7 +89,7 @@ export default function Home() {
             {...rest}
             className="py-7 px-8 uppercase tracking-wide bg-transparent border-black hover:bg-black hover:text-white border-4 text-xl text-black font-bold"
           >
-            { titleBtn }
+            {titleBtn}
           </Button>
         </div>
       </div>
@@ -110,11 +123,17 @@ export default function Home() {
     },
   ];
 
+  const TabCategoryItems = [
+    { label: "New Arrivals", icon: "", quantity: "10" },
+    { label: "Our Key Icons", icon: "", quantity: "7" },
+    { label: "Your Running Gear 🏃", icon: "", quantity: "16" },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center">
       <Header />
       <div className="p-6 w-full">
-        {/* Carousel */}
+        {/* ****************************  Carousel ******************************* */}
         <Carousel items={items} />
 
         {/* Brands */}
@@ -125,27 +144,83 @@ export default function Home() {
           {brandListComp}
         </div>
 
-        {/* Brands sales */}
+        {/* **************************** Brands sales **************************** */}
         <div className="grid grid-rows-2 grid-cols-2 grid-flow-col gap-4 max-h-[800px]">
-          { bannerSaleItems.map((item: any, index: number) => (
-              <div style={{ backgroundColor: item.bg }} className={`z-10 relative ${item.className}${item.image == bannerSale2.src ? ' flex-row-reverse' : ''}`} key={index}>
-                <Image
-                  src={item.image}
-                  loading="eager"
-                  className={`object-contain !object-right ${item.className == "row-span-2" ? 'w-full' : 'w-auto'} block h-auto rounded-none max-h-[800px]`}
-                  removeWrapper
-                />
-                { WrapperTitleSale({
-                  title: item.title,
-                  desc: item.desc,
-                  titleBtn: item.titleBtn,
-                }) }
-              </div>
-          )) }
+          {bannerSaleItems.map((item: any, index: number) => (
+            <div
+              style={{ backgroundColor: item.bg }}
+              className={`z-10 relative ${item.className}${
+                item.image == bannerSale2.src ? " flex-row-reverse" : ""
+              }`}
+              key={index}
+            >
+              <Image
+                src={item.image}
+                loading="eager"
+                className={`object-contain !object-right ${
+                  item.className == "row-span-2" ? "w-full" : "w-auto"
+                } block h-auto rounded-none max-h-[800px]`}
+                removeWrapper
+              />
+              {WrapperTitleSale({
+                title: item.title,
+                desc: item.desc,
+                titleBtn: item.titleBtn,
+              })}
+            </div>
+          ))}
         </div>
 
-        {/* Product List */}
-        <ProductList />
+        {/* **************************** New Arrivals **************************** */}
+        <div className="flex flex-col gap-4 my-16">
+          <div className="flex w-full items-center justify-between">
+            <Tabs
+              aria-label="Options"
+              variant="bordered"
+              radius="none"
+              classNames={{
+                tabList: "gap-6 w-full relative rounded-none p-0 border-none",
+                cursor: "w-full bg-black",
+                tab: "max-w-fit px-5 h-14 border-2 border-black",
+                tabContent: "group-data-[selected=true]:text-white text-black",
+              }}
+            >
+              {TabCategoryItems.map((item: any, index: number) => (
+                <Tab
+                  key={index}
+                  title={
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl"> {item.label} </span>
+                      <Chip
+                        size="md"
+                        color="danger"
+                        radius="md"
+                        variant="solid"
+                      >
+                        {" "}
+                        {item.quantity ? item.quantity : 0}{" "}
+                      </Chip>
+                      {item.icon}
+                    </div>
+                  }
+                />
+              ))}
+            </Tabs>
+            <Link 
+              isBlock 
+              showAnchorIcon 
+              href="/new-arrivals" 
+              color="primary"
+              className="text-2xl font-bold"
+            >
+              VIEW ALL
+            </Link>
+          </div>
+
+          {/* **************************** Product List **************************** */}
+
+          <ProductList />
+        </div>
       </div>
     </main>
   );
