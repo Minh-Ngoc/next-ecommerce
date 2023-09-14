@@ -15,6 +15,9 @@ import brandChanel from "@/assets/imgs/brands/chanel.png";
 import bannerSale1 from "@/assets/imgs/banner-sale/sale1.png";
 import bannerSale2 from "@/assets/imgs/banner-sale/sale2.png";
 import bannerSale3 from "@/assets/imgs/banner-sale/sale3.png";
+import { Product } from "@/types";
+import ProductCard from "@/components/ProductCard";
+import Featured from "@/components/Featured";
 
 export default function Home() {
   const items: any = [
@@ -129,8 +132,177 @@ export default function Home() {
     { label: "Your Running Gear 🏃", icon: "", quantity: "16" },
   ];
 
+  const products: Product[] = [
+    {
+      _id: 1,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "S",
+          colorID: "black",
+        },
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "L",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+    {
+      _id: 2,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "M",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+    {
+      _id: 3,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "S",
+          colorID: "black",
+        },
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "L",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+    {
+      _id: 4,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "M",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+    {
+      _id: 5,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "S",
+          colorID: "black",
+        },
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "L",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+    {
+      _id: 6,
+      productName: "Men's Lightweight Full-Zip Basketball Jacket",
+      productImages: [
+        {
+          urlImage:
+            "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6150f894-8ee1-4a72-8006-44e6b3997d46/sportswear-club-fleece-joggers-KflRdQ.png",
+        },
+        {
+          urlImage:
+            "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d7bea0d8-6f4a-489b-8a83-f9167eaf3488/mens-basketball-t-shirt-RDWf6G.png",
+        },
+      ],
+      stock: [
+        {
+          price: 130,
+          quantity: 100,
+          sizeID: "M",
+          colorID: "white",
+        },
+      ],
+      categoryID: "123",
+      brand: "Nike",
+    },
+  ];
+
+  const productList = products?.map((product) => (
+    <ProductCard key={product._id} product={product} />
+  ));
+
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center max-w-[100%] overflow-hidden">
       <Header />
       <div className="p-6 w-full">
         {/* ****************************  Carousel ******************************* */}
@@ -172,7 +344,7 @@ export default function Home() {
         </div>
 
         {/* **************************** New Arrivals **************************** */}
-        <div className="flex flex-col gap-4 my-16">
+        <div className="flex flex-col gap-4 my-16 px-10">
           <div className="flex w-full items-center justify-between">
             <Tabs
               aria-label="Options"
@@ -218,9 +390,13 @@ export default function Home() {
           </div>
 
           {/* **************************** Product List **************************** */}
-
-          <ProductList />
+          <div className="flex gap-4 pb-10 overflow-x-scroll overscroll-x-contain scrollbar">
+            {productList}
+          </div>
         </div>
+
+        {/* **************************** Featured **************************** */}
+        <Featured />
       </div>
     </main>
   );
