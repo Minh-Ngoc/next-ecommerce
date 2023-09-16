@@ -1,7 +1,6 @@
 "use client";
 
 import Header from "@/components/Header";
-import ProductList from "@/components/ProductList";
 import Carousel from "@/components/Carousel";
 import { Button, Image, Tabs, Tab, Chip, Link } from "@nextui-org/react";
 import bannerNike from "@/assets/imgs/banner/banner-nike.png";
@@ -18,6 +17,8 @@ import bannerSale3 from "@/assets/imgs/banner-sale/sale3.png";
 import { Product } from "@/types";
 import ProductCard from "@/components/ProductCard";
 import Featured from "@/components/Featured";
+import Blog from "@/components/Blog";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const items: any = [
@@ -397,7 +398,11 @@ export default function Home() {
 
         {/* **************************** Featured **************************** */}
         <Featured />
+
+        {/* **************************** Blog **************************** */}
+        <Blog />
       </div>
+      <Footer />
     </main>
   );
 }

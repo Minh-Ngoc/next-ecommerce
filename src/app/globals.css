@@ -43,3 +43,7 @@ body {
 	background-color: #555555;
 	border: 2px solid #555555;
 }
+
+.footer-wr-icon svg{
+  background-color: #FFFFFF;
+}
