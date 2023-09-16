@@ -25,3 +25,20 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+.clr-gray-82 {
+  color: #828282 !important;
+}
+
+.border-gray-4f {
+  border-color: #4F4F4F;
+}
+
+/* font size */
+.fz-18 {
+  font-size: 18px !important;
+}
+
+.fx-13 {
+  font-size: 13px !important;
+}
