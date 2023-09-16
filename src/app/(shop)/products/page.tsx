@@ -1,13 +1,12 @@
 'use client';
 
-import { Metadata } from 'next'
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useEffect } from 'react';
 import { setUserInfo } from '@/redux/slices';
 import { useTheme } from "next-themes";
 import { Button } from '@nextui-org/react';
 
-export const metadata: Metadata = {
+export const metadata = {
     title: 'Products',
 }
 export default function Products() {

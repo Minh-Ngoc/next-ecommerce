@@ -1,15 +1,13 @@
 "use client";
 
-import { Metadata } from "next";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useEffect, useMemo, useState } from "react";
 import { setUserInfo } from "@/redux/slices";
 import { Button, Checkbox, Input, Link } from "@nextui-org/react";
 import { EyeSlashFilledIcon } from "@/components/Icons";
 import { EyeFilledIcon } from "@/components/Icons/EyeFilledIcon";
-import Loading from '@/components/Loading';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Login",
 };
 export default function Login() {
