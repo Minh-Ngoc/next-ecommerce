@@ -6,9 +6,6 @@ import { setUserInfo } from '@/redux/slices';
 import { useTheme } from "next-themes";
 import { Button } from '@nextui-org/react';
 
-export const metadata = {
-    title: 'Products',
-}
 export default function Products() {
     const dispatch = useAppDispatch();
     const users = useAppSelector((state) => state.user);

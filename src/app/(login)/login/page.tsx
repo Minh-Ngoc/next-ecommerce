@@ -7,9 +7,6 @@ import { Button, Checkbox, Input, Link } from "@nextui-org/react";
 import { EyeSlashFilledIcon } from "@/components/Icons";
 import { EyeFilledIcon } from "@/components/Icons/EyeFilledIcon";
 
-export const metadata = {
-  title: "Login",
-};
 export default function Login() {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.user);

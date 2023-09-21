@@ -1,6 +1,8 @@
+'use client'
+
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -9,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function ShopLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={inter.className}>
-        <header>Header</header>
-        {children}
+    <div className="flex min-h-screen flex-col items-center max-w-[100%] overflow-hidden">
+      <Header />
+      {children}
+      <Footer />
     </div>
   )
 }
