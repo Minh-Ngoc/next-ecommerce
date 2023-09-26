@@ -1,5 +1,5 @@
 import { Product } from './product';
-export interface UserState {
+export interface ProductState {
     productList: Product[],
-    product: Product,
+    product?: Product | {},
 }
